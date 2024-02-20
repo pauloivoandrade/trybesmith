@@ -1,6 +1,6 @@
 export type Product = {
-  id: 'fake';
-  name: 'fake';
-  price: 'fake';
-  userId: 'face';
+  id?: number;
+  name: string;
+  price: string;
+  userId?: number;
 };
