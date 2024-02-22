@@ -3,12 +3,14 @@ import productsController from '../controllers/products.controller';
 import { 
   validationsName,
   validationsPrice,
-  validationUserId } from '../middlewares/createProductMiddleware';
+  validationUserId,
+  existingFields } from '../middlewares/createProductMiddleware';
 
 const productRouter = Router();
 
 productRouter.post(
   '/products',
+  existingFields,
   validationsName,
   validationsPrice,
   validationUserId,
