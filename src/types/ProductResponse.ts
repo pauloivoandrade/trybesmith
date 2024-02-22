@@ -9,3 +9,6 @@ export type ProductResponse<T> = {
   status: number, 
   data: T,
 };
+export type MessageResponse = {
+  message: string,
+};

@@ -16,6 +16,12 @@ describe('POST /products', function () {
     expect(httpResponse.status).to.equal(201);
     expect(httpResponse.body.id).to.be.a('number');
   });
+  it('Ao cadastrar um produto com nome como numero retorna erro', async function () {
+    const httpRequestBody = productMock.wrongProductMock;
+  
+    const httpResponse = await chai.request(app).post('/products').send(httpRequestBody);
+    expect(httpResponse.status).to.equal(422);
+  });
   
 
 });

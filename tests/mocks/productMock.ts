@@ -3,6 +3,11 @@ const productMock = {
         price: "30 peças de ouro",
         userId: 1
       }
+const wrongProductMock = {
+        name: 2,
+        price: "30 peças de ouro",
+        userId: 1
+      }
 
 const responseMock = {
     id: 8,
@@ -13,4 +18,5 @@ const responseMock = {
 export default {
     productMock,
     responseMock,
+    wrongProductMock,
 };

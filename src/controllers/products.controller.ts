@@ -9,9 +9,13 @@ async function list(_req: Request, res: Response) {
 
 async function create(req: Request, res: Response) {
   const { name, price, userId } = req.body;
-  const serviceResponse = await productsService.create({ name, price, userId });
-  
-  res.status(201).json(serviceResponse.data);
+
+  try {
+    const serviceResponse = await productsService.create({ name, price, userId });
+    res.status(serviceResponse.status).json(serviceResponse.data);
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 }
 
 export default {
